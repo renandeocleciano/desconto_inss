@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateTipoTelefones < ActiveRecord::Migration[7.1]
   def change
     create_table :tipo_telefones do |t|

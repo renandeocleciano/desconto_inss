@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateFaixaContribuicaos < ActiveRecord::Migration[7.1]
   def change
     create_table :faixa_contribuicaos do |t|

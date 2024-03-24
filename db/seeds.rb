@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -8,8 +10,7 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
-
-["Pessoal", "Comercial"].each do |telefone_descricao|
+%w[Pessoal Comercial].each do |telefone_descricao|
   TipoTelefone.find_or_create_by!(
     descricao: telefone_descricao
   )
@@ -43,15 +44,15 @@ faixas.each do |faixa|
 end
 
 Proponente.find_or_create_by(
-  nome: "Renan",
-  cpf: "999999999",
-  data_nascimento: "01/01/1987",
+  nome: 'Renan',
+  cpf: '999999999',
+  data_nascimento: '01/01/1987',
   salario: 3000,
   recolhido: 281.62
 )
 
 Contato.find_or_create_by(
-  numero: "(21)9999-22265",
+  numero: '(21)9999-22265',
   proponente: Proponente.first!,
   tipo_telefone: TipoTelefone.all.sample
 )

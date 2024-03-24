@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class ProponentesController < ApplicationController
-  before_action :set_proponente, only: %i[ show edit update destroy ]
+  before_action :set_proponente, only: %i[show edit update destroy]
 
   # GET /proponentes or /proponentes.json
   def index
@@ -7,8 +9,7 @@ class ProponentesController < ApplicationController
   end
 
   # GET /proponentes/1 or /proponentes/1.json
-  def show
-  end
+  def show; end
 
   # GET /proponentes/new
   def new
@@ -16,8 +17,7 @@ class ProponentesController < ApplicationController
   end
 
   # GET /proponentes/1/edit
-  def edit
-  end
+  def edit; end
 
   # POST /proponentes or /proponentes.json
   def create
@@ -25,7 +25,7 @@ class ProponentesController < ApplicationController
 
     respond_to do |format|
       if @proponente.save
-        format.html { redirect_to proponente_url(@proponente), notice: "Proponente was successfully created." }
+        format.html { redirect_to proponente_url(@proponente), notice: 'Proponente was successfully created.' }
         format.json { render :show, status: :created, location: @proponente }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ProponentesController < ApplicationController
   def update
     respond_to do |format|
       if @proponente.update(proponente_params)
-        format.html { redirect_to proponente_url(@proponente), notice: "Proponente was successfully updated." }
+        format.html { redirect_to proponente_url(@proponente), notice: 'Proponente was successfully updated.' }
         format.json { render :show, status: :ok, location: @proponente }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,19 +52,20 @@ class ProponentesController < ApplicationController
     @proponente.destroy!
 
     respond_to do |format|
-      format.html { redirect_to proponentes_url, notice: "Proponente was successfully destroyed." }
+      format.html { redirect_to proponentes_url, notice: 'Proponente was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_proponente
-      @proponente = Proponente.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def proponente_params
-      params.require(:proponente).permit(:nome, :cpf, :data_nascimento, :salario, :recolhido)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_proponente
+    @proponente = Proponente.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def proponente_params
+    params.require(:proponente).permit(:nome, :cpf, :data_nascimento, :salario, :recolhido)
+  end
 end
