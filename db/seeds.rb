@@ -43,16 +43,18 @@ faixas.each do |faixa|
   FaixaContribuicao.find_or_create_by!(faixa)
 end
 
-Proponente.find_or_create_by(
-  nome: 'Renan',
-  cpf: '999999999',
-  data_nascimento: '01/01/1987',
-  salario: 3000,
-  recolhido: 281.62
-)
+%w[Renan Maria José João Pedro Paulo Bruna].each do |proponente|
+  Proponente.find_or_create_by(
+    nome: proponente,
+    cpf: '999999999',
+    data_nascimento: '01/01/1987',
+    salario: 3000,
+    recolhido: 281.62
+  )
+end
 
 Contato.find_or_create_by(
   numero: '(21)9999-22265',
-  proponente: Proponente.first!,
+  proponente: Proponente.all.sample,
   tipo_telefone: TipoTelefone.all.sample
 )
