@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Tipo telefones</h1>
+
+<div id="tipo_telefones">
+  <% @tipo_telefones.each do |tipo_telefone| %>
+    <%= render tipo_telefone %>
+    <p>
+      <%= link_to "Show this tipo telefone", tipo_telefone %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New tipo telefone", new_tipo_telefone_path %>

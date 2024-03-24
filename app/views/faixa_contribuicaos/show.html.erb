@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @faixa_contribuicao %>
+
+<div>
+  <%= link_to "Edit this faixa contribuicao", edit_faixa_contribuicao_path(@faixa_contribuicao) %> |
+  <%= link_to "Back to faixa contribuicaos", faixa_contribuicaos_path %>
+
+  <%= button_to "Destroy this faixa contribuicao", @faixa_contribuicao, method: :delete %>
+</div>

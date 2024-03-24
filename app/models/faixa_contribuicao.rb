@@ -1,0 +1,2 @@
+class FaixaContribuicao < ApplicationRecord
+end

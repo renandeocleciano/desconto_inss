@@ -1,0 +1,48 @@
+<nav class="panel" id="<%= dom_id proponente %>">
+  <p class="panel-heading">Proponente</p>
+  <div class="panel-block">
+    <h2 class="title is-2"> <%= proponente.nome %></h2>
+  </div>
+  <div class="panel-block">
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th>Cpf</th>
+          <th>Data de Nascimento</th>
+          <th>Salário</th>
+          <th>Recolhido</th>
+          <th>Valor Final</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><%= proponente.cpf %></td>
+          <td><%= proponente.data_nascimento %></td>
+          <td>R$ <%= proponente.salario %></td>
+          <td>R$ <%= proponente.recolhido %></td>
+          <td>
+            R$ <%= calc_salario_final(proponente.salario, proponente.recolhido)%>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="panel-block">
+    <table class="table is-striped is-fullwidth">
+      <thead>
+        <tr>
+          <th>Tipo Telefone</th>
+          <th>Numero</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% proponente.contatos.each do |contato| %>
+        <tr>
+          <td><%= contato.tipo_telefone.descricao %></td>
+          <td><%= contato.numero %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</nav>

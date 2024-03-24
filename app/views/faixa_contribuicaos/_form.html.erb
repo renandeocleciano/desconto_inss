@@ -1,0 +1,32 @@
+<%= form_with(model: faixa_contribuicao) do |form| %>
+  <% if faixa_contribuicao.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(faixa_contribuicao.errors.count, "error") %> prohibited this faixa_contribuicao from being saved:</h2>
+
+      <ul>
+        <% faixa_contribuicao.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :min, style: "display: block" %>
+    <%= form.text_field :min %>
+  </div>
+
+  <div>
+    <%= form.label :max, style: "display: block" %>
+    <%= form.text_field :max %>
+  </div>
+
+  <div>
+    <%= form.label :aliquota, style: "display: block" %>
+    <%= form.text_field :aliquota %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,22 @@
+<%= form_with(model: tipo_telefone) do |form| %>
+  <% if tipo_telefone.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(tipo_telefone.errors.count, "error") %> prohibited this tipo_telefone from being saved:</h2>
+
+      <ul>
+        <% tipo_telefone.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :descricao, style: "display: block" %>
+    <%= form.text_field :descricao %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

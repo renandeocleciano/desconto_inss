@@ -1,0 +1,57 @@
+<nav class="panel" id="<%= dom_id proponente %>">
+<p class="panel-heading"><%= title%></p>
+ <div class="panel-block">
+<%= form_with(model: proponente) do |form| %>
+  <% if proponente.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(proponente.errors.count, "error") %> prohibited this proponente from being saved:</h2>
+
+      <ul>
+        <% proponente.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nome, class: "label" %>
+    <div class="control">
+      <%= form.text_field :nome, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpf, class: "label" %>
+    <div class="control">
+      <%= form.text_field :cpf, class: "input" %>
+    </div>
+  </div>
+
+   <div class="field">
+    <%= form.label :data_nascimento, class: "label" %>
+    <div class="control">
+      <%= form.text_field :data_nascimento, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :salario, class: "label" %>
+    <div class="control">
+      <%= form.text_field :salario, class: "input" %>
+    </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :recolhido, class: "label" %>
+    <div class="control">
+      <%= form.text_field :recolhido, class: "input" %>
+    </div>
+  </div>
+
+  <div>
+    <%= form.submit class: "button is-primary" %>
+  </div>
+<% end %>
+</div>
+</nav>
