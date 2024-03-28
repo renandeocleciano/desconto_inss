@@ -25,6 +25,7 @@ class ProponentesController < ApplicationController
 
     respond_to do |format|
       if @proponente.save
+        AtualizarSalarioJob.perform_async(@proponente.id)
         format.html { redirect_to proponente_url(@proponente), notice: 'Proponente was successfully created.' }
         format.json { render :show, status: :created, location: @proponente }
       else
@@ -38,6 +39,7 @@ class ProponentesController < ApplicationController
   def update
     respond_to do |format|
       if @proponente.update(proponente_params)
+        AtualizarSalarioJob.perform_async(@proponente.id)
         format.html { redirect_to proponente_url(@proponente), notice: 'Proponente was successfully updated.' }
         format.json { render :show, status: :ok, location: @proponente }
       else

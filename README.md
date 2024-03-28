@@ -11,6 +11,12 @@ Things you may want to cover:
 
 * Configuration
 
+bundle 
+yarn add @stimulus-components/chartjs
+bin/importmap pin @stimulus-components/chartjs
+
+
+
 * Database creation
 
 * Database initialization
