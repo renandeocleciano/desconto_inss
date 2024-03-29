@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   resources :proponentes
   resources :tipo_telefones
   resources :calculadora
-  resources :dashboard
+  resources :dashboard do
+    get :proponentes, on: :collection
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

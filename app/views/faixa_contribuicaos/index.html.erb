@@ -1,14 +1,16 @@
-<p style="color: green"><%= notice %></p>
-
-<h1>Faixa contribuicaos</h1>
+<div class="container">
+  <p style="color: green"><%= notice %></p>
+  <h1>Faixa de Contribuição</h1>
 
 <div id="faixa_contribuicaos">
   <% @faixa_contribuicaos.each do |faixa_contribuicao| %>
     <%= render faixa_contribuicao %>
     <p>
-      <%= link_to "Show this faixa contribuicao", faixa_contribuicao %>
+      <%= link_to "Show this faixa contribuicao", faixa_contribuicao, class: "btn btn-outline-primary"  %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New faixa contribuicao", new_faixa_contribuicao_path %>
+<%= link_to "New faixa contribuicao", new_faixa_contribuicao_path, class: "btn btn-outline-info"  %>
+
+</div>

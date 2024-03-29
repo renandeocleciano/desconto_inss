@@ -10,6 +10,3 @@ pin_all_from 'app/javascript/controllers', under: 'controllers'
 
 pin 'bootstrap', to: 'bootstrap.min.js', preload: true
 pin '@popperjs/core', to: 'popper.js', preload: true
-pin "@stimulus-components/chartjs", to: "@stimulus-components--chartjs.js" # @6.0.0
-pin "@kurkle/color", to: "@kurkle--color.js" # @0.3.2
-pin "chart.js/auto", to: "chart.js--auto.js" # @4.4.2

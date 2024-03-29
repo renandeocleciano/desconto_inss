@@ -49,7 +49,8 @@ end
     cpf: '999999999',
     data_nascimento: '01/01/1987',
     salario: 3000,
-    recolhido: 281.62
+    recolhido: 281.62,
+    faixa: 3
   )
 end
 

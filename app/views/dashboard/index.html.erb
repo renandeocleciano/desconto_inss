@@ -1,5 +1,7 @@
-<canvas
-  data-controller="dashboard"
-  data-chart-data-value="<%= @chart_data.to_json %>"
-  data-chart-options-value="<%= @chart_options.to_json %>"
-></canvas>
+<div data-controller="dashboard" class="container">
+  <div class="row">
+  <div class="col">
+    <canvas id="bar-chart" data-dashboard-target="grafico" width="400" height="350"></canvas>
+  </div>
+  </div>
+</div>

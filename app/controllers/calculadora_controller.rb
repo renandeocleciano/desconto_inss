@@ -1,6 +1,6 @@
 class CalculadoraController < ApplicationController
 include CalculadoraHelper
-  # GET /proponentes
+  # GET /calculadora
   def index
     salario = params[:salario].to_f
     aliquota = calcular_aliquota(salario)

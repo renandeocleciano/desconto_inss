@@ -1,23 +1,10 @@
 class DashboardController < ApplicationController
-  def index
-    @chart_data = {
-      labels: %w[January February March April May June July],
-      datasets: [{
-        label: 'My First dataset',
-        backgroundColor: 'transparent',
-        borderColor: '#3B82F6',
-        data: [37, 83, 78, 54, 12, 5, 99]
-      }]
-    }
+  def index; end
 
-    @chart_options = {
-      scales: {
-        yAxes: [{
-          ticks: {
-            beginAtZero: true
-          }
-        }]
-      }
-    }
+  def proponentes
+    proponentes = Proponente.group(:faixa).count.as_json
+    respond_to do |format|
+      format.json { render json: proponentes }
+    end
   end
 end

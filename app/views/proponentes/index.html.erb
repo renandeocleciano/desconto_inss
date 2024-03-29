@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
 
 <nav class="panel" id="proponentes">
-  <p class="panel-heading"><%= link_to "Adicionar proponente", new_proponente_path, class: "button is-primary" %></p>
+  <p class="panel-heading"><%= link_to "Adicionar proponente", new_proponente_path, class: "btn btn-outline-primary" %></p>
   <div class="panel-block">
     <h2 class="title is-2"> Proponentes</h2>
   </div>
@@ -36,9 +36,9 @@
             </span>
           </td>
           <td>
-                <%= link_to "Visualizar proponente", proponente, class: "button is-small is-primary" %>
+                <%= link_to "Visualizar proponente", proponente, class: "btn btn-outline-primary" %>
                 |
-                <%= link_to "Adicionar Contato", proponente, class: "button is-small is-info" %>
+                <%= link_to "Adicionar Contato", proponente, class: "btn btn-outline-info" %>
             </td>
         </tr>
         <% end %>
